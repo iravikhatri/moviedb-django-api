@@ -38,8 +38,8 @@ class MovieListAPIView(ListCreateAPIView):
 
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
-    # permission_classes = [IsAuthenticated, IsAdminOrReadOnly]
-    # filter_backends = (DjangoFilterBackend,)
+    permission_classes = [IsAuthenticated, IsAdminOrReadOnly]
+    filter_backends = (DjangoFilterBackend,)
     filterset_class = MovieFilter
 
 
