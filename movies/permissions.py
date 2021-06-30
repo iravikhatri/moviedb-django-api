@@ -7,5 +7,5 @@ class IsAdminOrReadOnly(BasePermission):
 
         message = "You do not have permission to perform this action."
 
-        if request.user._wrapped.is_admin or request.method in SAFE_METHODS:
+        if request.user.is_admin or request.method in SAFE_METHODS:
             return True
